@@ -1,0 +1,21 @@
+# Ignore massive output files and logs
+outputs/
+logs/
+.nfs*
+
+# Ignore sensitive phenotype data
+pheno_summary/*.txt
+
+# Ignore specific config with personal HPC paths
+scripts/config.sh
+
+# Ignore Python cache
+__pycache__/
+*.pyc
+
+# Ignore environment files that might be huge
+.DS_Store
+
+# R history
+.Rhistory
+.RData

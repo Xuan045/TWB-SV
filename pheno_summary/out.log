@@ -1,0 +1,89 @@
+Loading binary phenotype file...
+Loading quantitative phenotype file...
+Renamed FEV10 to FEV1. Total records: 146376
+TWB2 records: 120160
+TWB1-only records: 26216
+
+Cleaning TWB1...
+  Females with AFP > 100: 16 set to NA
+  BODY_WEIGHT: 5 outliers set to NA
+  BMI: 6 outliers set to NA
+  BODY_FAT_RATE: 1 outliers set to NA
+  BODY_BUTTOCKS: 7 outliers set to NA
+  FVC: 4 outliers set to NA
+  FEV1: 5 outliers set to NA
+  WBC: 5 outliers set to NA
+  HB: 1 outliers set to NA
+  HCT: 1 outliers set to NA
+  PLATELET: 8 outliers set to NA
+  HBA1C: 117 outliers set to NA
+  AC_GLUCOSE: 144 outliers set to NA
+  T_CHO: 8 outliers set to NA
+  TG: 66 outliers set to NA
+  LDL_C: 5 outliers set to NA
+  T_BILIRUBIN: 21 outliers set to NA
+  ALBUMIN: 5 outliers set to NA
+  SGOT: 80 outliers set to NA
+  SGPT: 80 outliers set to NA
+  GAMMA_GT: 62 outliers set to NA
+  AFP: 24 outliers set to NA
+  BUN: 36 outliers set to NA
+  CREATININE: 30 outliers set to NA
+  MICROALB: 53 outliers set to NA
+  SYSTOLIC_PRESSURE: 1 outliers set to NA
+  HEARTBEAT_SPEED: 20 outliers set to NA
+  EGFRcr: 23 outliers set to NA
+
+Cleaning TWB2...
+  Females with AFP > 100: 146 set to NA
+  BODY_HEIGHT: 1 outliers set to NA
+  BODY_WEIGHT: 17 outliers set to NA
+  BMI: 27 outliers set to NA
+  BODY_FAT_RATE: 2 outliers set to NA
+  BODY_WAISTLINE: 4 outliers set to NA
+  BODY_BUTTOCKS: 33 outliers set to NA
+  FVC: 13 outliers set to NA
+  FEV1: 8 outliers set to NA
+  RBC: 1 outliers set to NA
+  WBC: 1 outliers set to NA
+  HB: 1 outliers set to NA
+  HCT: 5 outliers set to NA
+  PLATELET: 47 outliers set to NA
+  HBA1C: 674 outliers set to NA
+  AC_GLUCOSE: 720 outliers set to NA
+  T_CHO: 20 outliers set to NA
+  TG: 326 outliers set to NA
+  HDL_C: 5 outliers set to NA
+  LDL_C: 15 outliers set to NA
+  T_BILIRUBIN: 146 outliers set to NA
+  ALBUMIN: 27 outliers set to NA
+  SGOT: 306 outliers set to NA
+  SGPT: 329 outliers set to NA
+  GAMMA_GT: 347 outliers set to NA
+  AFP: 137 outliers set to NA
+  BUN: 174 outliers set to NA
+  CREATININE: 159 outliers set to NA
+  URIC_ACID: 9 outliers set to NA
+  MICROALB: 382 outliers set to NA
+  CREATININE_URINE: 4 outliers set to NA
+  SYSTOLIC_PRESSURE: 4 outliers set to NA
+  DIASTOLIC_PRESSURE: 3 outliers set to NA
+  HEARTBEAT_SPEED: 34 outliers set to NA
+  EGFRcr: 130 outliers set to NA
+
+── TWB1 ──────────────────────────
+  Total   : 21377
+  Male (1): 10447
+  Female (2): 10930
+  SEX NA  : 0
+
+── TWB2 ──────────────────────────
+  Total   : 115658
+  Male (1): 38329
+  Female (2): 77329
+  SEX NA  : 0
+
+Saved: twb1_pheno_covar.txt / twb2_pheno_covar.txt
+Saved: merged_pheno_covar.txt (137035 total samples)
+Saved: binary traits summaries
+Saved: quantitative trait distribution PDFs
