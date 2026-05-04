@@ -77,6 +77,8 @@ exclude_pheno() {
 
 # External Tool Paths
 export PRSICE_BIN="/path/to/your/PRSice_linux"
+export SHAPEIT5_DIR="/path/to/your/shapeit5_v5.1.1"
+export MINIMAC4_BIN="/path/to/your/minimac4"
 
 # Pre-computed Data Paths
 export BCF_PHASED_V2="${OUT_DIR}/imputation_v2/phasing/phased.chr1.bcf"
@@ -87,3 +89,5 @@ export KIN0_FILE="${OUT_DIR}/check_ibd/twb2.ldpr.2degree.kin0"
 export FASTA_REF="/path/to/your/GRCh38_full_analysis_set_plus_decoy_hla.fa"
 export CHAIN_FILE="${PROJECT_DIR}/reference/hg19ToHg38.over.chain"
 export LD_EXCLUDE="${PROJECT_DIR}/reference/long_range_LD_intervals.txt"
+export GMAP_PREFIX="/path/to/your/gmap.b38/chr"
+export IMP_PANEL_PREFIX="/path/to/your/imp_panel"

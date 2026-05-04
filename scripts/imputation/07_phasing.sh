@@ -28,8 +28,8 @@ VCF=${impdir}/format_vcf/twb${batch}_EAS.qc.chr${CHR}.vcf.gz
 
 mkdir -p ${phasingdir}
 
-script_dir="/staging/biology/u4432941/apps/shapeit5_v5.1.1"
-GMAP="/staging/reserve/jacobhsu/TWB/TWBR11106-05/Phenotypes_TX/twb_array_qc/gmap.b38/chr${SLURM_ARRAY_TASK_ID}.b38.gmap.gz"
+script_dir="${SHAPEIT5_DIR}"
+GMAP="${GMAP_PREFIX}${SLURM_ARRAY_TASK_ID}.b38.gmap.gz"
 
 ${script_dir}/phase_common_static \
     --input $VCF \

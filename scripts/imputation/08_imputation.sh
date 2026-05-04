@@ -20,8 +20,8 @@ batch='1'
 TARGET="sv_snv"
 CHR=${SLURM_ARRAY_TASK_ID}
 
-MINIMAC4="/staging/biology/u4432941/apps/minimac4-4.1.5/bin/minimac4"
-PANEL=/staging/reserve/jacobhsu/TWB/TWBR11106-05/Phenotypes_TX/imp_panel/${TARGET}_panel/chr${CHR}.msav
+MINIMAC4="${MINIMAC4_BIN}"
+PANEL="${IMP_PANEL_PREFIX}/${TARGET}_panel/chr${CHR}.msav"
 
 impdir=${OUT_DIR}/imputation_v${batch}
 phasingdir=${impdir}/phasing
