@@ -1,9 +1,9 @@
 #!/usr/bin/bash
-#SBATCH -A MST109178        # Account name/project number
-#SBATCH -J check_sex         # Job name
-#SBATCH -p ngs92G           # Partition Name 等同PBS裡面的 -q Queue name
-#SBATCH -c 14               # 使用的core數 請參考Queue資源設定
-#SBATCH --mem=92g           # 使用的記憶體量 請參考Queue資源設定
+#SBATCH -A MST109178
+#SBATCH -J check_sex
+#SBATCH -p ngs92G
+#SBATCH -c 14
+#SBATCH --mem=92g
 #SBATCH -o /dev/null
 #SBATCH -e /dev/null 
 

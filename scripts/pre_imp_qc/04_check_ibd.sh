@@ -1,9 +1,9 @@
 #!/usr/bin/bash
-#SBATCH -A MST109178        # Account name/project number
-#SBATCH -J check_ibd        # Job name
-#SBATCH -p ngs372G           # Partition Name 等同PBS裡面的 -q Queue name
-#SBATCH -c 56               # 使用的core數 請參考Queue資源設定
-#SBATCH --mem=350g           # 使用的記憶體量 請參考Queue資源設定
+#SBATCH -A MST109178
+#SBATCH -J check_ibd
+#SBATCH -p ngs372G
+#SBATCH -c 56
+#SBATCH --mem=350g
 #SBATCH -o /dev/null
 #SBATCH -e /dev/null
 

@@ -1,9 +1,9 @@
 #!/bin/bash
-#SBATCH -A MST109178        # Account name/project number
-#SBATCH -J check_het  # Job name
-#SBATCH -p ngs92G           # Partition Name
+#SBATCH -A MST109178
+#SBATCH -J check_het
+#SBATCH -p ngs92G
 #SBATCH -c 14
-#SBATCH --mem=92G           # memory used
+#SBATCH --mem=92G
 #SBATCH -o /dev/null
 #SBATCH -e /dev/null
 

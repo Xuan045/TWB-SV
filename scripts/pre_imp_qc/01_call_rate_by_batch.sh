@@ -1,11 +1,11 @@
 #!/usr/bin/bash
-#SBATCH -A MST109178        # Account name/project number
-#SBATCH -J call_rate  # Job name
-#SBATCH -p ngs92G           # Partition Name 
-#SBATCH -c 14               
-#SBATCH --mem=92G           # memory used
-#SBATCH -o /dev/null          # Path to the standard output file 
-#SBATCH -e /dev/null          # Path to the standard error ouput file
+#SBATCH -A MST109178
+#SBATCH -J call_rate
+#SBATCH -p ngs92G
+#SBATCH -c 14
+#SBATCH --mem=92G
+#SBATCH -o /dev/null
+#SBATCH -e /dev/null
 
 # ---- Source Configuration ----
 source "$(dirname "$0")/../config.sh"

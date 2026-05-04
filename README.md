@@ -19,11 +19,12 @@ This repository contains a comprehensive, production-ready pipeline for performi
 └── README.md                # This document
 ```
 
-## Setup Instructions
+## Setup Instructions & Dependencies
 
-### 1. Environment Configuration
+To ensure maximum portability, **all** paths to environments, tools, and reference data have been completely abstracted out of the execution scripts. You must configure them centrally before running the pipeline.
 
-The pipeline relies on four main isolated environments. Recreate them using the `.yml` files in the `envs/` directory:
+### 1. Conda/Micromamba Environments
+The pipeline relies on four distinct Conda environments to manage Python and R dependencies cleanly. Recreate them using the `.yml` files in the `envs/` directory:
 
 ```bash
 # Example using micromamba
@@ -33,15 +34,21 @@ micromamba create -f envs/data_env.yml
 micromamba create -f envs/r_env.yml
 ```
 
-### 2. Pipeline Configuration
+### 2. External Standalone Binaries
+Some core genetic analysis software are **not** managed by Conda and must be compiled or downloaded independently on your HPC:
+- **SHAPEIT5** (`phase_common_static`): Used for haplotype phasing in Step 2.
+- **Minimac4**: Used for genotype imputation in Step 2.
+- **PRSice-2**: Used for Polygenic Risk Score modeling in Step 4.
 
-All server-specific and user-specific paths are abstracted out of the scripts and centralized.
+### 3. Pipeline Configuration (`config.sh`)
+
+You must tell the pipeline where to find your environments, standalone binaries, and large reference data (like genetic maps, FASTA files, and imputation panels).
 
 1. Copy the example configuration:
    ```bash
    cp scripts/config.example.sh scripts/config.sh
    ```
-2. Edit `scripts/config.sh` with your specific absolute paths to references, data, and the environment manager (`micromamba` or `conda`).
+2. Edit `scripts/config.sh` and replace the placeholder `/path/to/your/...` paths with the actual absolute paths on your server.
 
 ## Execution Workflow
 
