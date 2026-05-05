@@ -9,7 +9,15 @@
 
 
 # ---- Source Configuration ----
-source "$(dirname "$0")/../config.sh"
+if [ -n "$SLURM_SUBMIT_DIR" ]; then
+    if [ -f "$SLURM_SUBMIT_DIR/../config.sh" ]; then
+        source "$SLURM_SUBMIT_DIR/../config.sh"
+    elif [ -f "$SLURM_SUBMIT_DIR/scripts/config.sh" ]; then
+        source "$SLURM_SUBMIT_DIR/scripts/config.sh"
+    fi
+else
+    source "$(dirname "$0")/../config.sh"
+fi
 
 # ---- Log ----
 mkdir -p "$LOG_DIR"
