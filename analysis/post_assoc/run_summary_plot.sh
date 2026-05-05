@@ -1,10 +1,11 @@
 #!/usr/bin/bash
-#SBATCH -A MST109178        # Account name/project number
-#SBATCH -J REGENIE_summary_plot  # Job name
-#SBATCH -p ngs53G           # Partition Name 
-#SBATCH -c 8               
-#SBATCH --mem=53G           # memory used
-
+#SBATCH -A MST109178
+#SBATCH -J REGENIE_summary_plot
+#SBATCH -p ngs53G
+#SBATCH -c 8
+#SBATCH --mem=53G
+#SBATCH -o /dev/null
+#SBATCH -e /dev/null
 
 # ---- Source Configuration ----
 if [ -n "$SLURM_SUBMIT_DIR" ]; then
