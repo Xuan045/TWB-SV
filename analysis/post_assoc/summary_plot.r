@@ -113,6 +113,9 @@ for (current_type in types) {
   df$PHENOTYPE <- factor(df$PHENOTYPE, levels = pheno_group_df$PHENOTYPE)
   df$VAR_TYPE <- factor(df$VAR_TYPE, levels = c("SNV", "INDEL", "DEL", "INS"))
   
+  num_groups <- length(unique(pheno_group_df$GROUP))
+  my_colors <- colorRampPalette(RColorBrewer::brewer.pal(9, "Pastel1"))(num_groups)
+  
   group_bands <- pheno_group_df %>%
     group_by(GROUP) %>%
     summarize(ymin = min(PHENO_INDEX) - 0.5,
@@ -138,7 +141,7 @@ for (current_type in types) {
                                       DEL = 15,      # filled square
                                       INS = 3,       # plus
                                       Other = 4))+
-      scale_fill_brewer(palette = "Pastel1") +
+      scale_fill_manual(values = my_colors) +
   
       facet_grid(
           . ~ CHROM,
