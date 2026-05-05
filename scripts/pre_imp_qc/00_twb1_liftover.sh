@@ -7,10 +7,6 @@
 #SBATCH -o /dev/null
 #SBATCH -e /dev/null
 
-# ---- Redirect LOG file ----
-logfile=${LOG_DIR}/00_twb1_liftover.log
-exec > "$logfile" 2>&1
-
 # ---- Source Configuration ----
 if [ -n "$SLURM_SUBMIT_DIR" ]; then
     if [ -f "$SLURM_SUBMIT_DIR/../config.sh" ]; then
@@ -21,6 +17,10 @@ if [ -n "$SLURM_SUBMIT_DIR" ]; then
 else
     source "$(dirname "$0")/../config.sh"
 fi
+
+# ---- Redirect LOG file ----
+logfile=${LOG_DIR}/00_twb1_liftover.log
+exec > "$logfile" 2>&1
 
 # ---- Environment ----
 # Environment is initialized in config.sh
@@ -38,7 +38,7 @@ plink2 --bfile $twb1_hg19 \
     --export vcf id-paste=iid \
     --out ${OUTDIR}/twb1_hg19
 
-Liftover
+# Liftover
 echo "Running CrossMap VCF LiftOver..."
 CrossMap vcf \
     $chain_file \
