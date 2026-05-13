@@ -39,8 +39,8 @@ STEP2_MAF=0.05
 THREADS=${SLURM_CPUS_PER_TASK}
 
 # Paths
-VCF=${WORK_DIR:-/work/u4432941/sv}/imputation_v${batch}/${TARGET}_imp/chr${CHR}.dose.vcf.gz
-POST_IMP_DIR="${WORK_DIR:-/work/u4432941/sv}/${TARGET}_post_imp_v${batch}"
+VCF=${WORK_DIR}/imputation_v${batch}/${TARGET}_imp/chr${CHR}.dose.vcf.gz
+POST_IMP_DIR="${WORK_DIR}/${TARGET}_post_imp_v${batch}"
 PFILE="${POST_IMP_DIR}/chr${CHR}.rsq${STEP1_R2}_maf${STEP1_MAF}"
 LD_OUT="${POST_IMP_DIR}/${TARGET}.rsq${STEP2_R2}_maf${STEP2_MAF}_snv"
 

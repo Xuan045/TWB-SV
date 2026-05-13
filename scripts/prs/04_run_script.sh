@@ -22,6 +22,12 @@ fi
 # ---- Environment ----
 # Environment is initialized in config.sh
 
+# ---- Redirect LOG file ----
+logdir=${LOG_DIR}/regenie
+mkdir -p ${logdir}
+logfile=${logdir}/04_run_script_${SLURM_ARRAY_TASK_ID}.log
+exec > "$logfile" 2>&1
+
 # PHENO_LIST is defined in config.sh
 PHENO=$(sed -n "$((SLURM_ARRAY_TASK_ID))p" $PHENO_LIST)
 
