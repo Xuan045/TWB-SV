@@ -408,7 +408,9 @@ class VariantAnalyzer:
 
 def main():
     """Main execution function."""
-    data_path = "/staging/biology/u4432941/sv/imputation/analysis/sv_snv_imp_info"
+    import os
+out_dir = os.environ.get("OUTPUT_DIR", "/staging/biology/u4432941/sv/prs/outputs")
+data_path = os.path.join(out_dir, "sv_snv_imp_info")
     
     try:
         analyzer = VariantAnalyzer(data_path)

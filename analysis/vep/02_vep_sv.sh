@@ -68,7 +68,7 @@ INPUT_VCF_PATH=${OUT}/chr${CHR}.${SAMPLE_ID}.vcf.gz
 OUTPUT_VCF_PATH=${OUT}/chr${CHR}.${SAMPLE_ID}.vep.vcf.gz
 OUTPUT_TSV_PATH=${OUT}/chr${CHR}.${SAMPLE_ID}.tsv
 
-activate_env /opt/ohpc/Taiwania3/pkg/biology/vep/vep_v112.0
+activate_env $VEP_ENV_V112
 
 echo "$(date '+%Y-%m-%d %H:%M:%S') Job started" >> ${logfile}
 

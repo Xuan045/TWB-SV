@@ -34,7 +34,7 @@ if [ "$batch" == "1" ]; then
     datadir=${OUT_DIR}/twb1_hg38
     prefix=twb1_hg38
 else
-    datadir=/staging/reserve/jacobhsu/TWB/TWB/microarray/TWB2_genotyped_120163
+    datadir=$MICROARRAY_DIR
     prefix=TWB2.hg38.v4
 fi
 

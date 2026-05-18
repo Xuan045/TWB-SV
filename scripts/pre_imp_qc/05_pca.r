@@ -40,7 +40,7 @@ id_col    <- paste0("TWB", batch_num, "_ID")
 
 # ── Read ancestry ─────────────────────────────────────────────────────
 origin <- read.csv(
-  "/staging/reserve/jacobhsu/TWB/TWBR11106-05/Phenotypes_TX/twb_data_cleaning/twb_ancestry/processed_origin.csv",
+  Sys.getenv("TWB_ANCESTRY_CSV", "/staging/reserve/jacobhsu/TWB/TWBR11106-05/Phenotypes_TX/twb_data_cleaning/twb_ancestry/processed_origin.csv"),
   stringsAsFactors = FALSE
 )
 origin_sub <- origin[, c(id_col, "NATIVE_COMBINE")]
@@ -48,7 +48,7 @@ names(origin_sub) <- c("IID", "ancestry")
 
 # ── Read 1kGP pedigree ───────────────────────────────────────────────
 ped <- read.table(
-  "/staging/reserve/jacobhsu/TWB/TWBR11106-05/Phenotypes_TX/1kGP_high_cov/pedigree/20130606_g1k_3202_samples_ped_population.txt",
+  Sys.getenv("ONEKGP_PED_TXT", "/staging/reserve/jacobhsu/TWB/TWBR11106-05/Phenotypes_TX/1kGP_high_cov/pedigree/20130606_g1k_3202_samples_ped_population.txt"),
   header = TRUE, sep = " ", stringsAsFactors = FALSE
 )
 
