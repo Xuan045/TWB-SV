@@ -34,7 +34,7 @@ preqcdir=${OUT_DIR}/pre_imp_qc_v${batch}
 pcadir=${OUT_DIR}/pca_v${batch}
 BFILE=${preqcdir}/twb${batch}_preqc_sexcheck_hetcheck
 PARA=${pcadir}/twb${batch}
-PED=/staging/reserve/jacobhsu/TWB/TWBR11106-05/Phenotypes_TX/1kGP_high_cov/pedigree/20130606_g1k_3202_samples_ped_population.txt
+PED=${ONEKGP_PED_TXT}
 
 mkdir -p ${pcadir}
 
@@ -62,7 +62,7 @@ plink2 \
     --out ${PARA}_pca
 
 # ── Ref PCA ───────────────────────────────────────────────────────────
-ref="/staging/reserve/jacobhsu/TWB/TWBR11106-05/Phenotypes_TX/1kGP_high_cov/phase3_2504.geno002_maf005_snp_biallelic"
+ref=${ONEKGP_REF_PREFIX}
 
 awk '{$2 = "chr"$2; print}' ${ref}.bim > ${PARA}_ref_chr.bim
 ln -sf ${ref}.bed ${PARA}_ref_chr.bed
@@ -118,7 +118,7 @@ plink2 \
 # ── R: study-only + ref PCA plot + RF prediction ───────────────────────────
 run_in_env r_env \
     Rscript 05_pca.r ${pcadir} twb${batch} TRUE \
-    /staging/biology/u4432941/common_script/color_code.R
+    ${PROJECT_DIR}/scripts/utils/color_code.R
 
 # ── Extract individuals pass PCA check (not outliers and is EAS) ────────────────
 plink2 \
@@ -147,4 +147,4 @@ plink2 \
 # ── R: EAS-only plot ──────────────────────────────────────────────────
 run_in_env r_env \
     Rscript 05_pca.r ${pcadir} twb${batch} TRUE \
-    /staging/biology/u4432941/common_script/color_code.R
+    ${PROJECT_DIR}/scripts/utils/color_code.R
