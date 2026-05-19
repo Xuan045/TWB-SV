@@ -22,8 +22,6 @@ fi
 # Environment is initialized in config.sh
 activate_env assoc_env
 
-KING="/staging/biology/u4432941/apps/king"
-
 # ---- Redirect LOG file ----
 logfile=${LOG_DIR}/04_check_ibd.log
 exec > "$logfile" 2>&1

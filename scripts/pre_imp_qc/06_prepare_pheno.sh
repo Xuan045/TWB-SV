@@ -29,6 +29,6 @@ exec > "$logfile" 2>&1
 echo "Starting phenotype preparation at $(date)"
 
 # ---- Execute Python Script ----
-run_in_env data_env python3 "$(dirname "$0")/06_prepare_pheno.py"
+run_in_env data_env python3 06_prepare_pheno.py
 
 echo "Phenotype preparation completed at $(date)"
